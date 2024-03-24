@@ -1,8 +1,9 @@
 <h2 align="center">weather.check</h2>
+<p align="center">weather.check is a simple weather checking site that use reliable third party APIs to fetch weather info of a specific city.</p>
 
 <br/>
 
-<p align="center"><a href="https">Visit Live Site</a></p>
+<p align="center"><a href="https://weatherdotcheck.netlify.app/">Visit Live Site</a></p>
 
 <br/>
 
