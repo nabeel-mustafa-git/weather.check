@@ -64,7 +64,8 @@ const Hero = () => {
       const getData = async () => {
         const data = await fetch(api_url + cityName + "&country=" + countryName + api_key);
         const result = await data.json();
-        result.sunset = city;
+        result["city"] = city;
+        result["country"] = country;
         setWeatherData(result);
         setTemp(result.temp);
       };
@@ -146,7 +147,11 @@ const Hero = () => {
                 />
               </svg>
             </div>
-            <p className="text-5xl font-medium py-2">{weatherData.sunset}</p>
+            <p className="text-5xl font-medium py-2">
+              {weatherData.city}
+              <span className="text-xl font-light">, {weatherData.country}</span>
+            </p>
+
             <div className="flex gap-1 font-light">
               <p>Humidity: {weatherData.humidity}%</p>
               <p>| H : {weatherData.max_temp}&deg;</p>
@@ -154,7 +159,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 h-fit py-7 px-10 font-extralight leading-relaxed">
-            <h2 className="text-wrap font-normal text-lg border-b border-gray-500 pb-2 mb-2">More about {weatherData.sunset} weather!</h2>
+            <h2 className="text-wrap font-normal text-lg border-b border-gray-500 pb-2 mb-2">More about {weatherData.city} weather!</h2>
             <p>Feels like: {weatherData.feels_like}&deg;</p>
             <p>Max temperature: {weatherData.max_temp}&deg;</p>
             <p>Min temperature: {weatherData.min_temp}&deg;</p>
